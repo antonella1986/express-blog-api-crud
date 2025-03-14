@@ -13,7 +13,7 @@ function show(req, res){
     //(post rappresenta ogni elemento dell'array postsData
     //se il post.slug è uguale all'id che mi interessa, allora viene restituito
     const post = postsData.find(post => post.id === postId);
-    res.json(`Restituisci post con id: ${postId}`);
+    res.json(post);
 }
 
 //store

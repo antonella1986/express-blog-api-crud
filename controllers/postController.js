@@ -1,4 +1,5 @@
 const postController = require("../controllers/postController");
+const postsData = require("../data/postsList");
 
 //index
 function index(req, res){

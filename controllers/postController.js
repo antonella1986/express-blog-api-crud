@@ -2,32 +2,32 @@ const postController = require("../controllers/postController");
 
 //index
 function index(req, res){
-    res.json(postController);
+    res.send("Lista dei post");
 }
 
 //show
 function show(req, res){
-    res.send(`Mostra questo post: ${req.params.id}`)
+    res.send(`Dettagli del post con id: ${req.params.id}`);
 }
 
 //store
 function store (req, res){
-    res.send("Crea un nuovo post")
+    res.send("Creazione nuovo post");
 }
 
 //update
 function update(req, res){
-    res.send(`Modifica il post con id: ${req.params.id}`)
+    res.send(`Modifica totale del post con id: ${req.params.id}`);
 }
 
 //modify
 function modify(req, res){
-    res.send(`Modifica parziale a questo post: ${req.params.id}`)
+    res.send(`Modifica parziale del post con id: ${req.params.id}`);
 }
 
 //destroy
 function destroy(req, res){
-    res.send(`Elimina questo post: ${req.params.id}`)
+    res.send(`Eliminazione del post con id: ${req.params.id}`);
 }
 
 module.exports = { index, show, store, update, modify, destroy };

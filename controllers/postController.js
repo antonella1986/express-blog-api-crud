@@ -38,7 +38,7 @@ function destroy(req, res){
     const post = postsData.find(post => post.id === postId);
     // imposto il 404 se il post cercato non esiste
     if (!post) {
-        return res.status(404).json({
+        return res.status(204).json({
             error: 'Post non trovato',
             message: `Post con id ${req.params.id} non trovato`
         });

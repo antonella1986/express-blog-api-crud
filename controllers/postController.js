@@ -12,7 +12,7 @@ function show(req, res){
     //cerco il l'id che mi interessa dentro postData (l'array di oggetti)
     //(post rappresenta ogni elemento dell'array postsData
     //se il post.slug è uguale all'id che mi interessa, allora viene restituito
-    const post = postsData.find(post => post.id === postId);
+    const post = postsData.find(post => post.id === id);
     res.json(post);
 }
 
@@ -35,16 +35,15 @@ function modify(req, res){
 function destroy(req, res){
     const postId = Number(req.params.id);
     // cerco il post con l'id passato
-    const post = postsData.find(post => post.id === postId);
+    const post = postsData.find(post => post.id === id);
     // imposto il 404 se il post cercato non esiste
     if (!post) {
-        return res.status(204).json({
-            error: 'Post non trovato',
-            message: `Post con id ${req.params.id} non trovato`
-        });
+        res.sendStatus(404);
     }
-    res.send(`Eliminazione del post con id: ${req.params.id}`);
-    console.log(postsData)
+    //rimuovo il post dall'array
+    postsData.splice(postsData.indexOf(post), 1);
+    res.status(204).json
+    console.log(post)
 }
 
 module.exports = { index, show, store, update, modify, destroy };

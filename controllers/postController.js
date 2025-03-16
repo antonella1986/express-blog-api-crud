@@ -42,7 +42,7 @@ function destroy(req, res){
     }
     //rimuovo il post dall'array
     postsData.splice(postsData.indexOf(post), 1);
-    res.status(204).json
+    res.status(204)
     console.log(post)
 }
 

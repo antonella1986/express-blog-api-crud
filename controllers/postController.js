@@ -1,6 +1,6 @@
 const posts = require("../data/postsData");
 const postsData = require("../data/postsData");
-const { post } = require("../routers/posts");
+const postsRouter = require("../routers/posts");
 
 //index
 function index(req, res){

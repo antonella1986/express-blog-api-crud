@@ -19,15 +19,15 @@ function show(req, res){
 
 //store
 function store (req, res){
-    const newId = postsData[postsData.length - 1].id + 1;
+    const slug = req.body.title.toLowerCase().split(" ").join("-");
 
     const newPost = {
-        id: 6,
-        title: "Torta paesana",
-        slug: "torta-paesana",
-        content: `La torta paesana è un dolce di origine lombarda e precisamente della Brianza, la zona compresa tra la provincia a nord di Milano e il lago di Lecco-Como. E' un dolce di origine contadina, dalle infinite varianti, ma realizzata principalmente con pane raffermo bagnato nel latte. E' infatti conosciuta anche come torta di pane o, in dialetto locale, “michelacc” ovvero mica e lac (pane e latte). A seconda dei gusti e delle disponibilità del momento, al pane ammollato ogni famiglia univa ingredienti diversi, chi l'uvetta o chi i pinoli ad esempio. Noi vi presentiamo la nostra versione con l'aggiunta di cacao e amaretti: perfetta da gustare per una merenda dal sapore rustico, la torta paesana è un perfetto dolce di recupero quando si ha del pane avanzato… ed è ancora più buona il giorno dopo!`,
-        image: "torta_paesana.jpeg",
-        tags: ["Dolci", "Dolci al cioccolato", "Torte", "Ricette vegetariane", "Ricette al forno"],
+        id: postsData.length ? postsData[postsData.length - 1].id + 1 : 1,
+        title: "Torta alla banana light",
+        slug: slug,
+        content: "La torta alla banana light si fa con 3 ingredienti: yogurt greco, uova e banane",
+        image: "...",
+        tags: ["torta", "banana", "light"]
     }
 
     postsData.push(newPost);

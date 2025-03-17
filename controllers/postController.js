@@ -53,11 +53,11 @@ function update(req, res){
         })
     }
     //aggiorno il post
-    post.title = req.params.title;
-    post.slug = req.params.slug;
-    post.content = req.params.content;
-    post.image = req.params.image;
-    post.tags = req.params.tags;
+    post.title = req.body.title;
+    post.slug = req.body.slug;
+    post.content = req.body.content;
+    post.image = req.body.image;
+    post.tags = req.body.tags;
 
     //controllo se il post è stato aggiornato
     console.log(postsData);

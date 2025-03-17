@@ -25,7 +25,7 @@ function store (req, res){
         id: postsData.length ? postsData[postsData.length - 1].id + 1 : 1,
         title: "Torta alla banana light",
         slug: slug,
-        content: "La torta alla banana light si fa con 3 ingredienti: yogurt greco, uova e banane",
+        content: "La torta alla banana light è una ricetta facile e veloce, infatti si prepara con soli 3 ingredienti: yogurt greco, uova e banane; è perfetta per la colazione, soprattutto per chi è in perenne dieta come me! Vi serviranno 200 grammi di yougurt greco, 2 uova e 2 banane mature. Innanzitutto, mettete a riscaldare il forno a 180 gradi e schiacciate le banane. Prendete una scodella dove sbatterete gli albumi e mettete il composto da parte. In un'altra scodella sbattete i tuorli e aggiungete lo yogurt greco e le banane schiacciate. Ora unite dal basso verso l'alto gli albumi montati a neve. Se lo preferite, aggiungete un dolcificante senza calorie. Versate il tutto in una tortiera di circonferenza 14-15 cm e infornate. La torta sarà pronta quando la superficie sarà scura. Lasciate raffreddare e gustate!",
         image: "...",
         tags: ["torta", "banana", "light"]
     }

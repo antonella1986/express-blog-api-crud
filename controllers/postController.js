@@ -40,7 +40,29 @@ function store (req, res){
 
 //update
 function update(req, res){
-    res.send(`Modifica totale del post con id: ${req.params.id}`);
+    //recupero l'id del post da modificare
+    const id = Number(req.params.id);
+    //cerco il post tramite id
+    const post = postsData.find(post => post.id === id);
+    //controllo se esiste il post
+    if(!post){
+        res.status(404);
+        return res.json({
+            error: "404 not found",
+            message: "Post not found"
+        })
+    }
+    //aggiorno il post
+    post.title = req.params.title;
+    post.slug = req.params.slug;
+    post.content = req.params.content;
+    post.image = req.params.image;
+    post.tags = req.params.tags;
+
+    //controllo se il post è stato aggiornato
+    console.log(postsData);
+    //restituisco il post aggiornato in formato json
+    res.json(post);
 }
 
 //modify

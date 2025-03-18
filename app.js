@@ -5,6 +5,14 @@ const port = 3001;
 //middleware (altrimenti Express non riuscirà a leggere il body in formato JSON)
 app.use(express.json());
 
+//middleware server error
+const serverError = require("./middlewares/serverError");
+app.use(serverError);
+
+//middleware error 404
+const error404 = require("./middlewares/error404");
+app.use(error404);
+
 //importazione router
 const postsRouter = require("./routers/posts")
 
